@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftPlex.Task.Api", "SoftPlex.Task.Api\SoftPlex.Task.Api.csproj", "{F94EF163-424E-47A5-826A-366DFA361DAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftPlex.Task.Web", "SoftPlex.Task.Web\SoftPlex.Task.Web.csproj", "{D5076C7A-F6DF-4668-9628-39CE15DA0E5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftPlex.Task.Core", "SoftPlex.Task.Core\SoftPlex.Task.Core.csproj", "{88389945-9DCF-40A5-A3A4-B91194D2BEBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F94EF163-424E-47A5-826A-366DFA361DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F94EF163-424E-47A5-826A-366DFA361DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F94EF163-424E-47A5-826A-366DFA361DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F94EF163-424E-47A5-826A-366DFA361DAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5076C7A-F6DF-4668-9628-39CE15DA0E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5076C7A-F6DF-4668-9628-39CE15DA0E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5076C7A-F6DF-4668-9628-39CE15DA0E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5076C7A-F6DF-4668-9628-39CE15DA0E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88389945-9DCF-40A5-A3A4-B91194D2BEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88389945-9DCF-40A5-A3A4-B91194D2BEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88389945-9DCF-40A5-A3A4-B91194D2BEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88389945-9DCF-40A5-A3A4-B91194D2BEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
