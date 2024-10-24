@@ -23,7 +23,7 @@ public class ProductsController : Controller
     [HttpPost]
     [ProducesResponseType(typeof(ProductDto), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Post([FromBody] ProductDto request, CancellationToken token)
+    public async Task<IActionResult> Post([FromBody] ProductPostDto request, CancellationToken token)
     {
         var response = await _mediator.Send(new AddProductCommand { Model = request }, token);
         return CreatedAtAction(nameof(GetById), new {id = response.Id}, response);
@@ -34,7 +34,7 @@ public class ProductsController : Controller
     [ProducesResponseType((StatusCodes.Status404NotFound))]
     public async Task<IActionResult> Put([FromBody] ProductDto request, CancellationToken token)
     {
-        var response = await _mediator.Send(request, token);
+        var response = await _mediator.Send(new UpdateProductCommand { Model = request}, token);
         return Ok(response);
     }
     

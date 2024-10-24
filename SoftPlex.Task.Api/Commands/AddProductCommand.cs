@@ -8,7 +8,7 @@ namespace SoftPlex.Task.Api.Commands;
 
 public class AddProductCommand: IRequest<ProductDto>
 {
-    public ProductDto Model { get; set; }
+    public ProductPostDto Model { get; set; }
     
     
     public class AddProductCommandHandler : IRequestHandler<AddProductCommand, ProductDto>

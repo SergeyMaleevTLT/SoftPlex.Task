@@ -6,8 +6,8 @@ namespace SoftPlex.Task.Core.Infrastructure.Data.Context;
 
 public class DataContext : DbContext
 {
-    public DbSet<Product> Products { get; set; }
-    public DbSet<ProductVersion> ProductVersions { get; set; }
+    public DbSet<Product> Product { get; set; }
+    public DbSet<ProductVersion> ProductVersion { get; set; }
     public DataContext(DbContextOptions<DataContext> options) : base(options) {}
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)

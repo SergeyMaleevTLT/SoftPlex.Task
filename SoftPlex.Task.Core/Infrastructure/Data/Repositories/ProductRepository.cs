@@ -17,14 +17,14 @@ public class ProductRepository : IDbRepository<Product>
 
     public IQueryable<Product> GetAll(CancellationToken cancel = default)
     {
-        return _dataContext.Products.AsNoTracking().AsQueryable();
+        return _dataContext.Product.AsNoTracking().AsQueryable();
     }
 
     public async Task<Product> Add(Product item, CancellationToken cancel = default)
     {
         if (item is null) throw new ArgumentNullException(nameof(item));
 
-        await _dataContext.Products.AddAsync(item, cancel);
+        await _dataContext.Product.AddAsync(item, cancel);
         await _dataContext.SaveChangesAsync(cancel);
         return item;
     }
@@ -33,14 +33,14 @@ public class ProductRepository : IDbRepository<Product>
     {
         if (item is null) throw new ArgumentNullException(nameof(item));
 
-        _dataContext.Products.Update(item);
+        _dataContext.Product.Update(item);
         await _dataContext.SaveChangesAsync(cancel);
         return item;
     }
 
     public async System.Threading.Tasks.Task Remove(Product item, CancellationToken cancel = default)
     {
-        _dataContext.Products.Remove(item);
+        _dataContext.Product.Remove(item);
         await _dataContext.SaveChangesAsync(cancel);
     }
 }
