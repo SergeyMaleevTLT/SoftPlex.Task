@@ -1,0 +1,40 @@
+﻿@model ProductViewModel
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<form method="post" id="modalFormId">
+    <input type="hidden" asp-for="@Model.Id" />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">Название</span>
+                </div>
+                <input type="text" class="form-control" asp-for="@Model.Name" aria-describedby="basic-addon3">
+            </div>
+            <span class="text-danger" asp-validation-for="@Model.Name"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">Описание</span>
+                </div>
+                <input type="text" class="form-control" asp-for="@Model.Description" aria-describedby="basic-addon3">
+            </div>
+            <div class="form-group">
+                <span class="text-danger" asp-validation-for="@Model.Description"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button type="submit" id="updateProductBtnId" asp-action="Update" class="btn btn-primary">Сохранить</button>
+        </div>
+    </div>
+</form>

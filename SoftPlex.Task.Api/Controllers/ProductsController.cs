@@ -67,7 +67,7 @@ public class ProductsController : Controller
     [ProducesResponseType(typeof(ProductDto[]), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult<ProductDto[]>> SearchByName([FromQuery] string searchByName, CancellationToken token)
+    public async Task<ActionResult<ProductDto[]>> SearchByName([FromQuery] string? searchByName, CancellationToken token)
     {
         var result = await _query.GetByFilterNameAsync(searchByName, token);
         return Ok(result);

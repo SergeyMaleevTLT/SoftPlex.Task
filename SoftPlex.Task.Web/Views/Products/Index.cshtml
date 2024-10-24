@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model SoftPlex.Task.Core.Domain.Dto.ProductDto[]
+
+@{
+    ViewData["Title"] = "Product Page";
+}
+
+<h2>Список изделий</h2>
+
+<div style="display: flex; align-items: center;margin-left:15px;margin-top:30px;">
+    <form method="GET" action="@Url.Action("Index", "Products")">
+        <input type="text" name="searchName" style="margin-right:15px" placeholder="Поиск по имени" />
+        <button type="submit" style="margin-right:15px" class="btn btn-primary">Искать</button>
+    </form>
+    <div>
+        <button type="button" class="btn btn-primary" onclick="openModalToCreate({url:'/Products/Create'})" data-toggle="modal" data-target="#modal">
+            Добавить
+        </button>
+    </div>
+</div>
+
+<table id="productsTable" class="table">
+    <thead>
+    <tr>
+        <th>Название</th>
+        <th>Описание</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="openModalToUpdate({ url: '/Products/Update', data: '@product.Id' })" data-toggle="ajax-modal" data-target="modal">
+                    Редактировать
+                </button>
+            </td>
+            <td>
+                <form asp-action="Delete" asp-controller="Products" method="post">
+                    <input type="hidden" name="Id" asp-for="@product.Id" />
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите удалить эту запись?')">Удалить</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">Информация об изделии</h3>
+            </div>
+            <div class="modal-body" id="modalBodyId"></div>
+        </div>
+    </div>
+</div>

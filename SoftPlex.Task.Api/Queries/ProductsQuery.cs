@@ -25,7 +25,7 @@ public class ProductsQuery : IProductsQuery
             .ToArrayAsync(cancel);
     }
 
-    public async Task<ProductDto[]> GetByFilterNameAsync(string name, CancellationToken cancel = default)
+    public async Task<ProductDto[]> GetByFilterNameAsync(string? name, CancellationToken cancel = default)
     {
         var query = _repository.GetAll();
 
@@ -41,8 +41,11 @@ public class ProductsQuery : IProductsQuery
 
     public async Task<ProductDto?> GetByIdAsync(Guid id, CancellationToken cancel = default)
     {
-        return await _repository.GetAll()
-            .ProjectTo<ProductDto>(_mapper.ConfigurationProvider)
+        var product = await _repository.GetAll()
             .FirstOrDefaultAsync(x => x.Id == id, cancel);
+
+        return product is not null
+            ? _mapper.Map<ProductDto>(product)
+            : null;
     }
 }
