@@ -35,7 +35,9 @@ public class ProductsController : Controller
     public async Task<IActionResult> Put([FromBody] ProductDto request, CancellationToken token)
     {
         var response = await _mediator.Send(new UpdateProductCommand { Model = request}, token);
-        return Ok(response);
+        return response is not null
+            ? Ok(response)
+            : NotFound();
     }
     
     [HttpDelete("{id:guid}")]

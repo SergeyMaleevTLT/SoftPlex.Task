@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftPlex.Task.Core", "SoftP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI.Migrations", "CLI.Migrations\CLI.Migrations.csproj", "{F655555A-48F7-41C6-91A9-52C2240F5D2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftPlex.Api.Tests", "SoftPlex.Api.Tests\SoftPlex.Api.Tests.csproj", "{55B215B6-551F-4F62-97EA-74A8307BF8F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{F655555A-48F7-41C6-91A9-52C2240F5D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F655555A-48F7-41C6-91A9-52C2240F5D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F655555A-48F7-41C6-91A9-52C2240F5D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B215B6-551F-4F62-97EA-74A8307BF8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B215B6-551F-4F62-97EA-74A8307BF8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B215B6-551F-4F62-97EA-74A8307BF8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B215B6-551F-4F62-97EA-74A8307BF8F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

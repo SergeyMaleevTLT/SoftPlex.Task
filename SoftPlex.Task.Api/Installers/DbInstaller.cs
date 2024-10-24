@@ -14,6 +14,7 @@ public class DbInstaller : IInstaller
                 throw new ArgumentNullException("ConnectionStrings section not found");
         }
 
+        services.AddSingleton(settings);
         services.AddDataRepository(settings);
     }
 }

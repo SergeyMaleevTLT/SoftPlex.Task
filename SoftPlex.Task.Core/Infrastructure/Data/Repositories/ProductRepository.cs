@@ -33,7 +33,7 @@ public class ProductRepository : IDbRepository<Product>
     {
         if (item is null) throw new ArgumentNullException(nameof(item));
 
-        _dataContext.Product.Update(item);
+        _dataContext.Entry(item).State = EntityState.Modified;
         await _dataContext.SaveChangesAsync(cancel);
         return item;
     }

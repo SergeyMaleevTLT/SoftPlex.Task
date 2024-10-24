@@ -10,7 +10,6 @@ CREATE TABLE Product (
 );
 
 CREATE INDEX IX_Product_Name ON Product(Name)
-/*WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON)*/;
 
 
 /*-----3.-------*/
@@ -26,16 +25,11 @@ CREATE TABLE ProductVersion (
                                 CONSTRAINT FK_ProductVersion_Product FOREIGN KEY (ProductID) REFERENCES Product(ID) ON DELETE CASCADE
 );
 
-CREATE INDEX IX_ProductVersion_Name ON ProductVersion(Name)
-/*WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON)*/;
-CREATE INDEX IX_ProductVersion_CreatingDate ON ProductVersion(CreatingDate)
-/*WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON)*/;
-CREATE INDEX IX_ProductVersion_Width ON ProductVersion(Width)
-/*WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON)*/;
-CREATE INDEX IX_ProductVersion_Height ON ProductVersion(Height)
-/*WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON)*/;
-CREATE INDEX IX_ProductVersion_Length ON ProductVersion(Length)
-/*WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON)*/;
+CREATE INDEX IX_ProductVersion_Name ON ProductVersion(Name);
+CREATE INDEX IX_ProductVersion_CreatingDate ON ProductVersion(CreatingDate);
+CREATE INDEX IX_ProductVersion_Width ON ProductVersion(Width);
+CREATE INDEX IX_ProductVersion_Height ON ProductVersion(Height);
+CREATE INDEX IX_ProductVersion_Length ON ProductVersion(Length);
 
 /*-----4.-------*/
 CREATE TABLE EventLog (
@@ -45,7 +39,6 @@ CREATE TABLE EventLog (
 );
 
 CREATE INDEX IX_EventLog_EventDate ON EventLog(EventDate)
-/*WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON)*/;
 
 
 /*-----5.-------*/

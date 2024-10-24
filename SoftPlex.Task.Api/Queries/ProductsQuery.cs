@@ -27,8 +27,14 @@ public class ProductsQuery : IProductsQuery
 
     public async Task<ProductDto[]> GetByFilterNameAsync(string name, CancellationToken cancel = default)
     {
-        return await _repository.GetAll()
-            .Where(x => x.Name.Contains(name))
+        var query = _repository.GetAll();
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            query = query.Where(x => x.Name.Contains(name));
+        }
+        
+        return  await query
             .ProjectTo<ProductDto>(_mapper.ConfigurationProvider)
             .ToArrayAsync(cancel);
     }
