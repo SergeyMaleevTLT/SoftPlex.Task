@@ -11,4 +11,7 @@ public class JwtSettings
     /// Время жизни токена (сек.)
     /// </summary>
     public int LifeTimeToken { get; set; }
+    
+    
+    public bool IsEnabled { get; set; }
 }

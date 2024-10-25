@@ -14,6 +14,10 @@ public static class AuthJwtExtensions
     /// </summary>
     public static void AddAuthJwt(this IServiceCollection services, JwtSettings settings)
     {
+        if (!settings.IsEnabled)
+        {
+            return;
+        }
         
         services.AddSingleton(settings);
             
