@@ -1,4 +1,6 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SoftPlex.Task.Api.Commands;
 using SoftPlex.Task.Api.Queries;
@@ -7,6 +9,7 @@ using SoftPlex.Task.Core.Domain.Dto;
 
 namespace SoftPlex.Task.API.Controllers;
 
+//[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [Route("api/[controller]")]
 [Produces("application/json")]
 public class ProductsController : Controller

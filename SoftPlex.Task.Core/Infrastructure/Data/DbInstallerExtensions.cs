@@ -34,6 +34,5 @@ public static class DbInstallerExtensions
 
         provider.InitContext<DataContext>(settings, services);
         services.AddScoped<IDbRepository<Product>, ProductRepository>();
-
     }
 }

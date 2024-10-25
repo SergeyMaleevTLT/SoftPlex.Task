@@ -11,7 +11,7 @@ GO
 CREATE TABLE Product (
                          ID UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY NOT NULL,
                          Name NVARCHAR(255) NOT NULL UNIQUE,
-                         Description NVARCHAR(MAX),
+                         Description NVARCHAR(MAX)
 );
 
 CREATE NONCLUSTERED INDEX IX_Product_Name ON Product(Name) 

@@ -8,6 +8,8 @@ public class DataContext : DbContext
 {
     public DbSet<Product> Product { get; set; }
     public DbSet<ProductVersion> ProductVersion { get; set; }
+    public DbSet<User> User { get; set; }
+    
     public DataContext(DbContextOptions<DataContext> options) : base(options) {}
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)

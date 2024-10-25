@@ -10,5 +10,6 @@ public class AutoMapperProfile : Profile
     {
         CreateMap<ProductDto, Product>().ReverseMap();
         CreateMap<ProductPostDto, Product>();
+        CreateMap<UserDto, User>().ReverseMap();
     }
 }
